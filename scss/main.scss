@@ -48,6 +48,7 @@ ul {
 }
 
 #content  {
+    
     margin-left: 10px;
     font-family: $font-stack;
     h2 {
@@ -87,7 +88,16 @@ ul {
     float: right;
     margin-right: 10%;
     
-    .block {
+//    .block {
+//        border: 1px white solid;
+//        height: 25px;
+//        width: 25px;
+//        display: inline-block;
+//        margin: 5px 5px;
+//        background-color: $color-stack3;
+//    }
+}
+.block {
         border: 1px white solid;
         height: 25px;
         width: 25px;
@@ -95,7 +105,16 @@ ul {
         margin: 5px 5px;
         background-color: $color-stack3;
     }
-}
 #control-wrapper {
     display: inline-block;
 }
+
+#content {
+    #player-block {
+    background-color: yellow;
+}
+#passenger-block {
+    background-color: green;
+}
+}
+

@@ -8,10 +8,15 @@ module.exports = Backbone.Model.extend({
         dimensionMin: 0,
         startEnergy: 20,
         currentEnergy: 20,
-        energyXPos: Math.round(Math.random()*10),
-        energyYPos: Math.round(Math.random()*10),
+        energyXPos: Math.round(Math.random()*9),
+        energyYPos: Math.round(Math.random()*9),
         fuelUse: 1,
         score: 0,
+        /*
+        function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+}
+        */
     },
     loseEnergy: function () {
         this.set('currentEnergy', this.get('currentEnergy') - this.get('fuelUse'));
@@ -65,11 +70,31 @@ module.exports = Backbone.Model.extend({
         }
     },
     energyRandom: function () {
-       this.set('energyXPos', Math.round(Math.random()*10));
-       this.set('energyYPos', Math.round(Math.random()*10));
-       this.set('currentEnergy', this.get('currentEnergy') + Math.round(Math.random()*10));
+       this.set('energyXPos', Math.round(Math.random()*9));
+       this.set('energyYPos', Math.round(Math.random()*9));
+       this.set('currentEnergy', this.get('currentEnergy') + Math.round(Math.random()*(7-3)+3));
        if (this.get('currentEnergy') > this.get('startEnergy')){
            this.set('currentEnergy', this.get('startEnergy'));
            }
-    }
+    },
+    playerBox: function () {
+        var oldSpot = document.getElementById('player-block');
+        if (oldSpot !== null) {
+        oldSpot.removeAttribute('id', 'player-block');
+        }
+        var player = document.getElementById('block-'+this.get('xPosition')+'-'+this.get('yPosition'));
+        if (player !== null) {
+        player.setAttribute('id', 'player-block');
+        }
+    },
+    passengerBox: function () {
+        var oldSpot = document.getElementById('passenger-block');
+        if (oldSpot !== null) {
+        oldSpot.removeAttribute('id', 'passenger-block');
+        }
+        var passenger = document.getElementById('block-'+this.get('energyXPos')+'-'+this.get('energyYPos'));
+        if (passenger !== null) {
+        passenger.setAttribute('id', 'passenger-block');
+        }
+    },
 });

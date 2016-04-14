@@ -43,16 +43,7 @@ module.exports = Backbone.View.extend({
                 console.log('Created a div');
             }
         }
-//        for (var y = 9; y = ; y++) {
-//            for (var x = 0; y < 10; y++) {
-//              var div = document.createElement('div');
-//                div.setAttribute('id', 'block-'+x+'-'+y);
-//                div.classList.add('block');
-////                div.innerHTML('%nbsp');
-//                grid.appendChild(div);
-//                console.log('Created a div');
-//            }
-//        }
+
            
            if (this.model.get('xPosition') === this.model.get('energyXPos') && this.model.get('yPosition') === this.model.get('energyYPos')) {
             console.log('Found it!');
@@ -61,6 +52,8 @@ module.exports = Backbone.View.extend({
         if (this.model.get('currentEnergy') === 0) {
             alert('Game over! You ran out of fuel.');
         }
+        this.model.passengerBox();
+        this.model.playerBox();
     },
     keyAction: function (e) {
 //        var code = e.keyCode || e.which;
