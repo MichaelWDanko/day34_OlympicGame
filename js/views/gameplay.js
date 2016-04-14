@@ -49,7 +49,7 @@ module.exports = Backbone.View.extend({
             console.log('Found it!');
             this.collectEnergy();
         }
-        if (this.model.get('currentEnergy') === 0) {
+        if (this.model.get('currentEnergy') <= 0) {
             alert('Game over! You ran out of fuel.');
         }
         this.model.passengerBox();
