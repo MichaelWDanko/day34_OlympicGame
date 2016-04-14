@@ -1,0 +1,24 @@
+{
+  "name": "day32_healthapp",
+  "version": "1.0.0",
+  "description": "Using Backbone to create a 2 view single page app of a game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelWDanko/day31_HealthApp.git"
+  },
+  "author": "Michael Danko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelWDanko/day32_SingleMovementApp/issues"
+  },
+  "homepage": "https://github.com/MichaelWDanko/day32_SingleMovementApp#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^2.2.0"
+  }
+}

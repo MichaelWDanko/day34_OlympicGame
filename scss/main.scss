@@ -1,0 +1,81 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$main-color: #374366;
+$color-stack1: #747F9C;
+$color-stack2: #4f5b80;
+$color-stack3: #242f57;
+$color-stack4: #111c3f;
+$color-stack5: white;
+
+$font-stack: "Noto Sans", sans-serif;
+
+body {
+  margin: 0;
+  background-color: $color-stack4
+}
+#title-link {
+    text-transform: none;
+    color: $color-stack5;
+}
+header {
+ background-color: $main-color;
+ color: white;
+ padding-top: 10px;
+ padding-left: 10px; 
+h1 {
+  font-family: $font-stack;
+  font-size: 2.2em;
+  display: inline-block; }
+ul {
+    display: inline-block;
+    width: 60%; 
+    li {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.2em;
+        list-style: none;
+        display: inline-block;
+        text-transform: capitalize;
+        margin: 0% 1%;
+        text-decoration: none;
+        color: $color-stack5;
+        padding: 5px 8px;
+        }
+    li:hover {
+        background-color: $color-stack2;
+    }
+    }
+}
+
+#content  {
+    margin-left: 10px;
+    font-family: $font-stack;
+    h2 {
+    color: $color-stack5;
+    text-transform: capitalize;
+    }
+    h3 {
+        color: $color-stack5;
+    }
+    
+    input {
+        height: 25px;
+        font-size: 1em;
+    }
+    #create-view {
+        
+    }
+    #game-view {
+        p {
+            color: $color-stack5;
+        }
+    }
+}
+#mode-select {
+    margin-top: 50px;
+    p {
+        display: inline-block;
+        color: $color-stack5;
+        font-family: $font-stack;
+    }
+}
