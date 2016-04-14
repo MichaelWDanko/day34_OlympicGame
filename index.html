@@ -23,9 +23,10 @@
         </div>
     </script>
     <script type="text/template" id="game-template">
+    <div id="control-wrapper">
         <h2> Playing: Olympic Adventures </h2>
         <p id="fuel-level">Fuel level: <%= currentEnergy %>/<%= startEnergy %> </p>
-        <p id="score">Score: <%= collectedPods %></p>
+        <p id="score">Score <%= score %></p>
         
         <button id="left-button">Left</button>
         <button id="right-button">Right</button>
@@ -35,8 +36,20 @@
         <p id="next-fuel"> The next fuel is located at (<%= energyXPos %>,<%= energyYPos %>).
         
     <p id="status"> <%=name %> is currently located at <%=xPosition %>, <%=yPosition %> on the map.</p>
+    </div>
+    <div id="game-map">
+        
+    </div>
     </script>
-    
+<!--
+    var grid = document.getElementById('game-map');
+    for ( var i = 0; i < 100; i++) {
+    var div = document.createElement('div');
+    div.classlist.add('block')
+    div.setAttribute('id', `cell-${i}`);
+    grid.appendChild(div)
+    }
+-->
     
 
     <script src="js/app.js"></script>

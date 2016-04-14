@@ -20,13 +20,13 @@ module.exports = Backbone.View.extend({
     },
     suburban: function () {
         this.model.set('vehicle', 'Suburban');
-        this.model.set('mpg', '2');
+        this.model.set('fuelUse', '2');
         this.model.set('startEnergy', 120);
         this.model.set('currentEnergy', 120);
     },
     tesla: function () {
         this.model.set('vehicle', 'Tesla');
-        this.model.set('mpg', '1');
+        this.model.set('fuelUse', '1');
         this.model.set('startEnergy', 80);
         this.model.set('currentEnergy', 80);
     },

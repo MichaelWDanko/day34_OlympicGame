@@ -3,7 +3,7 @@ module.exports = Backbone.View.extend({
         this.model.on('change:xPosition', this.render, this);
         this.model.on('change:yPosition', this.render, this);
         this.model.on('change:currentEnergy', this.render, this);
-//        this.model.on('change:collectedPods', this.)
+//        this.model.on('change:score', this.)
     },
     events: {
         'click #up-button': 'moveUp',
@@ -27,10 +27,34 @@ module.exports = Backbone.View.extend({
             currentEnergy: this.model.get('currentEnergy'),
             energyXPos: this.model.get('energyXPos'),
             energyYPos: this.model.get('energyYPos'),
-            collectedPods: this.model.get('collectedPods'),
+            score: this.model.get('score'),
+            
         });
         this.el.innerHTML = html;
-        if (this.model.get('xPosition') === this.model.get('energyXPos') && this.model.get('yPosition') === this.model.get('energyYPos')) {
+       
+        var grid = document.getElementById('game-map');
+        for (var y = 9; y >= 0; y--) {
+            for (var x = 0; x < 10; x++) {
+              var div = document.createElement('div');
+                div.setAttribute('id', 'block-'+x+'-'+y);
+                div.classList.add('block');
+//                div.innerHTML('%nbsp');
+                grid.appendChild(div);
+                console.log('Created a div');
+            }
+        }
+//        for (var y = 9; y = ; y++) {
+//            for (var x = 0; y < 10; y++) {
+//              var div = document.createElement('div');
+//                div.setAttribute('id', 'block-'+x+'-'+y);
+//                div.classList.add('block');
+////                div.innerHTML('%nbsp');
+//                grid.appendChild(div);
+//                console.log('Created a div');
+//            }
+//        }
+           
+           if (this.model.get('xPosition') === this.model.get('energyXPos') && this.model.get('yPosition') === this.model.get('energyYPos')) {
             console.log('Found it!');
             this.collectEnergy();
         }
@@ -67,7 +91,7 @@ module.exports = Backbone.View.extend({
     },
     
     collectEnergy: function () {
-        this.model.set('collectedPods', this.model.get('collectedPods') + 1);
+        this.model.set('score', this.model.get('score') + 1);
         this.model.energyRandom();
     },
 });

@@ -79,3 +79,23 @@ ul {
         font-family: $font-stack;
     }
 }
+#game-map{
+    width: 350px;
+    background-color: $color-stack1;
+//    flex-direction: column-reverse;
+    display: inline-block;
+    float: right;
+    margin-right: 10%;
+    
+    .block {
+        border: 1px white solid;
+        height: 25px;
+        width: 25px;
+        display: inline-block;
+        margin: 5px 5px;
+        background-color: $color-stack3;
+    }
+}
+#control-wrapper {
+    display: inline-block;
+}

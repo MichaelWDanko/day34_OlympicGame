@@ -4,17 +4,17 @@ module.exports = Backbone.Model.extend({
         xPosition: 0,
         yPosition: 0,
         name: 'Default',
-        dimensionMax: 10,
+        dimensionMax: 9,
         dimensionMin: 0,
         startEnergy: 20,
         currentEnergy: 20,
         energyXPos: Math.round(Math.random()*10),
         energyYPos: Math.round(Math.random()*10),
-        mpg: 1,
-        collectedPods: 0,
+        fuelUse: 1,
+        score: 0,
     },
     loseEnergy: function () {
-        this.set('currentEnergy', this.get('currentEnergy') - this.get('mpg'));
+        this.set('currentEnergy', this.get('currentEnergy') - this.get('fuelUse'));
     },
     moveUp: function () {
         console.log('Clicked on Move up!');
