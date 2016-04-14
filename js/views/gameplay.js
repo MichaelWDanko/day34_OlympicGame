@@ -51,6 +51,7 @@ module.exports = Backbone.View.extend({
         }
         if (this.model.get('currentEnergy') <= 0) {
             alert('Game over! You ran out of fuel.');
+            Backbone.history.navigate('game-over', {trigger:true});
         }
         this.model.passengerBox();
         this.model.playerBox();

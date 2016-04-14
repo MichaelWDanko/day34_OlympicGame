@@ -119,3 +119,15 @@ ul {
 }
 }
 
+#gameover-wrapper {
+    font-family: $font-stack;
+    text-align: center;
+    h2 {
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+    p {
+        color: $color-stack5;
+        font-size: 1em;
+    }
+}

@@ -27,30 +27,25 @@
         <h2> Playing: Olympic Adventures </h2>
         <p id="fuel-level">Fuel level: <%= currentEnergy %>/<%= startEnergy %> </p>
         <p id="score">Score <%= score %></p>
-        
         <button id="left-button">Left</button>
         <button id="right-button">Right</button>
         <button id="up-button">Up</button>
         <button id="down-button">Down</button>
-        
         <p id="next-fuel"> The next fuel is located at (<%= energyXPos %>,<%= energyYPos %>).
-        
     <p id="status"> <%=name %> is currently located at <%=xPosition %>, <%=yPosition %> on the map.</p>
     </div>
-    <div id="game-map">
-        
-    </div>
+    <div id="game-map"></div>
     </script>
-<!--
-    var grid = document.getElementById('game-map');
-    for ( var i = 0; i < 100; i++) {
-    var div = document.createElement('div');
-    div.classlist.add('block')
-    div.setAttribute('id', `cell-${i}`);
-    grid.appendChild(div)
-    }
--->
-    
+    <script type="text/template" id="gameover-template">
+        <div id="gameover-wrapper">
+            <h2> Game Over! </h2>
+            <p>Username: <%= name %></p>
+            <p>Score: <%= score %></p>
+        
+            <p>Would you like to play again?
+            <button id="new-game">New Game</button>
+        </div>
+    </script>
 
     <script src="js/app.js"></script>
 </head>
@@ -58,6 +53,7 @@
 <body>
     <header>
         <a href="index.html" id="title-link"><h1>The Olympia Adventures</h1></a>
+<!--
         <ul>
             <a href="#/create">
                 <li>Create Character</li>
@@ -66,6 +62,7 @@
                 <li>Begin Adventure</li>
             </a>
         </ul>
+-->
     </header>
 
     <main id="content">

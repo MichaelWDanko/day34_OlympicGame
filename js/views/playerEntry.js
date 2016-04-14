@@ -1,3 +1,4 @@
+router = require('../router');
 module.exports = Backbone.View.extend({
     initialize: function () {
         this.render();
@@ -16,7 +17,9 @@ module.exports = Backbone.View.extend({
     createPlayer: function () {
         var name = document.getElementById('name-input').value;
         this.model.set('name', name);
+        console.log(this.model.get('name'));
         console.log('Player name saved!');
+        Backbone.history.navigate('game', {trigger:true});
     },
     suburban: function () {
         this.model.set('vehicle', 'Suburban');
