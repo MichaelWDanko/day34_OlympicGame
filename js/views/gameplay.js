@@ -3,7 +3,23 @@ module.exports = Backbone.View.extend({
         this.model.on('change:xPosition', this.render, this);
         this.model.on('change:yPosition', this.render, this);
         this.model.on('change:currentEnergy', this.render, this);
-//        this.model.on('change:score', this.)
+        var self = this;
+        Mousetrap.bind('up', function() {
+            console.log('up key pressed');
+            self.moveUp();
+        });
+        Mousetrap.bind('down', function() {
+            console.log('down key pressed');
+            self.moveDown();
+        });
+        Mousetrap.bind('left', function() {
+            console.log('left key pressed');
+            self.moveLeft();
+        });
+        Mousetrap.bind('right', function() {
+            console.log('right key pressed');
+            self.moveRight();
+        });
     },
     events: {
         'click #up-button': 'moveUp',
@@ -16,7 +32,6 @@ module.exports = Backbone.View.extend({
     template: _.template(document.getElementById('game-template').textContent)
         /*Underscore template. Get Text Content*/
         ,
-
     render: function () {
 
         var html = this.template({
@@ -55,21 +70,6 @@ module.exports = Backbone.View.extend({
         }
         this.model.passengerBox();
         this.model.playerBox();
-    },
-    keyAction: function (e) {
-//        var code = e.keyCode || e.which;
-//        if (code == 38) {
-//            console.log('Up key');
-//        }
-//        if (code == 40) {
-//            console.log('Down key');
-//        }
-//        if (code == 37) {
-//            console.log('Left key');
-//        }
-//        if (code == 39) {
-//            console.log('Right key');
-//        }
     },
     moveUp: function () {
         this.model.moveUp();
