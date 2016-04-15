@@ -8,10 +8,12 @@ module.exports = Backbone.View.extend({
         var html = this.template({
             name: this.model.get('name'),
             score: this.model.get('score'),
+            highScore: this.model.get('highScore'),
+            highScoreUser: this.model.get('highScoreUser'),
         });
         this.el.innerHTML = html;
     },
     newGame: function () {
         Backbone.history.navigate('create', {trigger:true});
-    }
+    },
 });

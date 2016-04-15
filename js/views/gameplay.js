@@ -53,21 +53,20 @@ module.exports = Backbone.View.extend({
               var div = document.createElement('div');
                 div.setAttribute('id', 'block-'+x+'-'+y);
                 div.classList.add('block');
-//                div.innerHTML('%nbsp');
                 grid.appendChild(div);
-                console.log('Created a div');
+//                console.log('Created a div');
             }
         }
-
-           
            if (this.model.get('xPosition') === this.model.get('energyXPos') && this.model.get('yPosition') === this.model.get('energyYPos')) {
             console.log('Found it!');
             this.collectEnergy();
         }
-        if (this.model.get('currentEnergy') <= 0) {
-            alert('Game over! You ran out of fuel.');
-            Backbone.history.navigate('game-over', {trigger:true});
-        }
+//        
+//        if (this.model.get('currentEnergy') <= 0) {
+//            this.model.saveScore();
+//            alert('Game over! You ran out of fuel.');
+//            Backbone.history.navigate('game-over', {trigger:true});
+//        }
         this.model.passengerBox();
         this.model.playerBox();
     },

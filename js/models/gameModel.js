@@ -1,6 +1,7 @@
 module.exports = Backbone.Model.extend({
     initialize: function () {},
     defaults: {
+        name: "AAA",
         xPosition: 0,
         yPosition: 0,
         name: 'Default',
@@ -12,6 +13,8 @@ module.exports = Backbone.Model.extend({
         energyYPos: Math.round(Math.random()*9),
         fuelUse: 1,
         score: 0,
+        highScore: 0,
+        highScoreUser: 'AAA',
         /*
         function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
@@ -32,6 +35,7 @@ module.exports = Backbone.Model.extend({
                 console.log('You cant go outside the boundaries!');
             }
         }
+        this.energyCheck();
     },
     moveDown: function () {
         console.log('Clicked on Move down!');
@@ -44,6 +48,7 @@ module.exports = Backbone.Model.extend({
                 console.log('You cant go outside the boundaries!');
             }
         }
+        this.energyCheck();
     },
     moveLeft: function () {
         console.log('Clicked on Move left!');
@@ -56,6 +61,7 @@ module.exports = Backbone.Model.extend({
                 console.log('You cant go outside the boundaries!');
             }
         }
+        this.energyCheck();
     },
     moveRight: function () {
         console.log('Clicked on Move right!');
@@ -68,6 +74,7 @@ module.exports = Backbone.Model.extend({
                 console.log('You cant go outside the boundaries!');
             }
         }
+        this.energyCheck();
     },
     energyRandom: function () {
        this.set('energyXPos', Math.round(Math.random()*9));
@@ -96,5 +103,18 @@ module.exports = Backbone.Model.extend({
         if (passenger !== null) {
         passenger.setAttribute('id', 'passenger-block');
         }
+    },
+    saveScore: function () {
+      if (this.get('score') > this.get('highScore')) {
+          this.set('highScore', this.get('score'));
+          this.set('highScoreUser', this.get('name'));
+      }  
+    },
+    energyCheck: function () {
+        if (this.get('currentEnergy') <= 0) {
+            this.saveScore();
+            alert('Game over! You ran out of fuel.');
+            Backbone.history.navigate('game-over', {trigger:true});
+        }  
     },
 });

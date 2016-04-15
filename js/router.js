@@ -17,6 +17,7 @@ module.exports = Backbone.Router.extend({
     },
     createPlayer: function () {
         console.log('Switched to "Create A Player" View');
+        this.gameModel = new GameModel();
         
         if (this.activeView !== null) {
             this.activeView.el.innerHTML = '';
