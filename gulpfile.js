@@ -5,6 +5,8 @@ var browserify = require('gulp-browserify');
 gulp.task('default', ['html', 'js', 'css', 'cname']);
 
 gulp.task('html', function () {
+    gulp.src('./favicon.png')
+        .pipe(gulp.dest('./public'));
     return gulp.src('./*.html')
         .pipe(gulp.dest('./public'));
 });
